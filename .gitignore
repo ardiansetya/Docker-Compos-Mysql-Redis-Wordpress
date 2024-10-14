@@ -1,0 +1,22 @@
+# MySQL data directory
+mysql_data/
+
+# Environment variables
+.env
+
+# Docker specific
+.docker/
+docker-compose.override.yml
+
+# Logs
+*.log
+
+# System Files
+.DS_Store
+Thumbs.db
+
+# IDE specific files
+.idea/
+.vscode/
+*.swp
+*.swo

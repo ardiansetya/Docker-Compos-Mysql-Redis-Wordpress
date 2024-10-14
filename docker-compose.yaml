@@ -1,0 +1,26 @@
+version: '3'
+services:
+  php:
+    container_name: php-server
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./src:/var/www/html
+    ports:
+      - 8080:80
+    depends_on:
+      - mysql
+  mysql:
+    image: mysql:latest
+    container_name: mysql-server
+    environment:
+      MYSQL_ROOT_PASSWORD: sandirahasia
+      MYSQL_DATABASE: wordpress_dp
+      MYSQL_USER: wordpress_user
+      MYSQL_PASSWORD: sandi_wordpress
+    volumes:
+      - ./mysql_data:/var/lib/mysql
+  redis:
+    image: redis:latest
+    container_name: redis-server
